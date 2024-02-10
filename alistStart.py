@@ -2,6 +2,7 @@ import os
 import json
 import sys
 import winshell
+import subprocess
 
 # 获取程序的绝对路径
 program_path = sys.argv[0]
@@ -56,6 +57,4 @@ else:
     print("未启用开机启动")
 
 # 执行命令
-os.system(command)
-
-input("按任意键退出...")
+subprocess.Popen(command, creationflags=subprocess.CREATE_NO_WINDOW, shell=True)
